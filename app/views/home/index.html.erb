@@ -1,0 +1,38 @@
+
+
+<div class="page-header">
+  <h1>Listing Products</h1>
+</div>
+
+<p id="notice"><%= notice %></p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Color</th>
+      <th>Status</th>
+      <th>Inward Date</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+     <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.price %></td>
+        <td><%= product.color %></td>
+        <td><%= product.status ? "Enabled" : "Disabled" %></td>
+        <td><%= product.inward_date%></td>
+        <td><%= product.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pen', new_pen_path %> | <%= link_to 'New Notebook', new_notebook_path %>
+
